@@ -1,0 +1,59 @@
+.auth{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__register-link{
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    color:#ADADAD;
+  }
+  &__success{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 9rem;
+    h3{
+      font-size: 23px;
+    }
+    svg{
+      color:#199EFC;
+    }
+    p{
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.13px;
+      opacity: .5;
+    }
+  }
+  .button{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    width: 100%;
+  }
+  .block{
+    max-width: 430px;
+    width: 430px;
+  }
+  &__top{
+    text-align: center;
+    margin-bottom: 50px;
+    h2{
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    p{
+      font-size: 18px;
+      line-height: 21px;
+      letter-spacing: 0.13px;
+      opacity: .5;
+    }
+  }
+}

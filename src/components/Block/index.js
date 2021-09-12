@@ -1,14 +1,11 @@
 import React from 'react';
-import {Button as MainButton} from 'antd'
+import './Block.scss'
 import classNames from "classnames";
-import './Button.scss'
 
-const Button = ({children, ...props}) => {
+const Block = ({children, ...props}) => {
     return (
-        <MainButton {...props} className={classNames('button', props.className, {'button--large':props.size === 'large'})}>
-            {children}
-        </MainButton>
+        <div {...props} className={classNames('block', props.className)}>{children}</div>
     );
 };
 
-export default Button;
+export default Block;

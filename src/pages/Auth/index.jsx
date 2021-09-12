@@ -1,14 +1,18 @@
 import React from 'react';
-import {Block, Button} from "../components";
+import {LoginForm, RegisterForm} from "../../components";
+import './Auth.scss'
+import {Redirect, Route, Switch} from 'react-router-dom'
 
-const Login = () => {
+const Auth = () => {
     return (
-        <section className={'login'}>
-            <Block>
-                <Button size='large' type='primary'>кнопка</Button>
-            </Block>
+        <section className='auth'>
+            <Switch>
+                <Route path={'/login'} exact component={LoginForm}/>
+                <Route path={'/register'} exact component={RegisterForm}/>
+                <Redirect to={'/login'}/>
+            </Switch>
         </section>
     );
 };
 
-export default Login;
+export default Auth;
