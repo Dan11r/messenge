@@ -7,9 +7,8 @@ const Auth = () => {
     return (
         <section className='auth'>
             <Switch>
-                <Route path={'/login'} exact component={LoginForm}/>
+                <Route path={'/login'} exact  component={LoginForm}/>
                 <Route path={'/register'} exact component={RegisterForm}/>
-                <Redirect to={'/login'}/>
             </Switch>
         </section>
     );

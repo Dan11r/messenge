@@ -5,13 +5,12 @@ import {Block, Button} from "../index";
 import {Link} from "react-router-dom";
 
 const RegisterForm = () => {
-    const success = true
+    const success = false
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
     return (
         <>
-
             <Block>
                 <div className="auth__top">
                     <h2>Регистрация</h2>
@@ -78,5 +77,4 @@ const RegisterForm = () => {
         </>
     );
 };
-
 export default RegisterForm;
