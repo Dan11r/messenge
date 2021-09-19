@@ -1,0 +1,14 @@
+.login-form{
+  display: flex;
+  flex-direction: column;
+  &__Username{
+    margin-bottom: 1rem !important;
+  }
+  &__password{
+    margin-bottom: 3rem !important;
+  }
+  &__button{
+    margin-bottom: 2rem !important;
+    height: 3rem;
+  }
+}

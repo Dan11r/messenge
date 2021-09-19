@@ -1,0 +1,12 @@
+.auth{
+  &__form{
+    display: flex;
+    flex-direction: column;
+  }
+  &__input{
+    margin-bottom: 2rem !important;
+  }
+  &__button{
+    margin-bottom: 1rem !important;
+  }
+}

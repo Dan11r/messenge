@@ -1,13 +1,20 @@
 import React from 'react';
-import {Form, Input} from "antd";
-import {LockOutlined, UserOutlined} from "@ant-design/icons";
 import {Block, Button} from "../index";
 import {Link} from "react-router-dom";
+import {TextField} from "@material-ui/core";
+import {useFormik} from "formik";
+import  './loginForm.scss'
 
 const LoginForm = () => {
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
-    };
+    const formik = useFormik({
+        initialValues: {
+            Username: '',
+            password: '',
+        },
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2));
+        },
+    });
     return (
         <>
             <Block>
@@ -16,37 +23,39 @@ const LoginForm = () => {
                         <h2>Войти в аккаунт</h2>
                         <p>Пожалуйста, войдете в аккаунт</p>
                     </div>
-                    <Form
+                    <form
+                        onSubmit={formik.handleSubmit}
                         name="normal_login"
                         className="login-form"
-                        initialValues={{remember: true}}
-                        onFinish={onFinish}
                     >
-                        <Form.Item
-                            validateStatus="success"
-                            hasFeedback
-                            name="username"
-                        >
-                            <Input size={'large'} prefix={<UserOutlined className="site-form-item-icon"/>}
-                                   placeholder="Username"/>
-                        </Form.Item>
-                        <Form.Item
-                            name="password"
-                        >
-                            <Input
-                                size={'large'}
-                                prefix={<LockOutlined className="site-form-item-icon"/>}
-                                type="password"
-                                placeholder="Password"
+
+                            <TextField id="Username"
+                                       name="Username"
+                                       size={'small'}
+                                       label="Username"
+                                value={formik.values.email}
+                                onChange={formik.handleChange}
+                                       variant="outlined"
+                        className="login-form__Username"/>
+
+
+
+                            <TextField
+                                id="password"
+                                name="password"
+                                label="password"
+                                variant="outlined"
+                                size={'small'}
+                                type={'password'}
+                                value={formik.values.email}
+                                onChange={formik.handleChange}
+                                className={'login-form__password'}
                             />
-                        </Form.Item>
-                        <Form.Item>
-                            <Button size={'large'} type="primary" htmlType="submit" className="login-form-button">
+                            <Button variant="contained" color={'primary'} type="submit" className="login-form__button">
                                 Войти в аккаунт
                             </Button>
-                        </Form.Item>
                         <Link to={'/register'} className={'auth__register-link'}>Зарегистрироваться</Link>
-                    </Form>
+                    </form>
                 </div>
             </Block>
         </>

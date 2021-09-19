@@ -1,21 +1,152 @@
-@import "../../styles/_variables";
-.message{
-  display: flex;
+@import "~styles/_variables";
 
-  &__avatar{
-    img{
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+&--image{
+  align-items: baseline;
+}
+  &--isme {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  &__avatar {
+    &--isme {
+      margin-left: 13px;
+    }
+
+    img {
       border-radius: 50%;
       width: 33px;
       height: 33px;
       margin-right: 13px;
-      margin-bottom: 18px ;
+      margin-bottom: 25px;
     }
 
   }
-  &__bubble{
-    background-color: #3674FF;
+
+  &__bubble {
+    background-color: $blue;
     box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733);
     border-radius: 12px 12px 12px 0px;
+    padding: 15px;
+    margin-bottom: 5px;
+    max-width: 440px;
+&--istyping{
+  background-color: $blue-typing;
+}
+    &--isme {
+      background-color: $light;
+      border-radius: 12px 12px 0px 12px;
+    }
   }
+
+  &__date {
+    font-size: 12px;
+    opacity: 0.5;
+
+    &--isme {
+      text-align: right;
+      display: block;
+
+    }
+  }
+
+  &__text {
+    color: #fff;
+    line-height: 20px;
+
+    &--isme {
+      color: $black !important;
+    }
+  }
+&__readed{
+  position: relative;
+  bottom:40px;
+  left: 10px;
+  &--isme{
+    left: -10px;
+  }
+}
+  &__attached{
+    display: flex;
+  max-width: 441px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    &-img{
+      cursor: pointer;
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 5px;
+      margin-top: 4px;
+      img{
+        width: 300px;
+      }
+    }
+    &-items{
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 5px;
+      margin-top: 4px;
+      img{
+        width: 100px;
+      }
+    }
+  }
+  &--istyping{
+    align-items: flex-start;
+  }
+  &__typing{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    span{
+      height: 9px;
+      width: 9px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background-color: $blue-typing-dot;
+      animation: loading 1s linear infinite;
+
+      &:nth-child(1){
+        animation-delay: 0.1s;
+      }
+      &:nth-child(2){
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3){
+        animation-delay: 0.3s;
+      }
+    }
+
+  }
+  /* Creating the dots */
+
+  /* Creating the loading animation*/
+  @keyframes loading {
+    0%{
+      transform: translateX(0);
+    }
+    25%{
+      transform: translateX(15px);
+    }
+    50%{
+      transform: translateX(-15px);
+    }
+    100%{
+      transform: translateX(0);
+    }
+
+  }
+
+
 
 }
